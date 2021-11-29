@@ -12,18 +12,18 @@ valores aos atributos e os imprimir.*/
 //  - sexo: char                                                      // 
 //  - idade: int                                                      // 
 ////////////////////////////////////////////////////////////////////////
-//  <<create>> Pessoa(n: string, e: string, f: long, s: char, i: int) //
-// <<destroy>> ~Pessoa()                                              //
+// + <<create>> Pessoa(n: string, e: string, f: long, s: char, i: int)//
+// + <<destroy>> ~Pessoa()                                            //
 // + getNome(): string                                                //
-//  + setNome(n: string): void                                        //
-//  + getEmail(): string                                              //
-//  + setEmail(e: string): void                                       //
-//  + getFone(): int                                                  //
-//  + setFone(f: int): void                                           //
-//  + getSexo(): char                                                 //
-//  + setSexo(s: char): void                                          //
-//  + getIdade(): int                                                 //
-//  + setIdade(i: int): void                                          //
+// + setNome(n: string): void                                         //
+// + getEmail(): string                                               //
+// + setEmail(e: string): void                                        //
+// + getFone(): int                                                   //
+// + setFone(f: int): void                                            //
+// + getSexo(): char                                                  //
+// + setSexo(s: char): void                                           //
+// + getIdade(): int                                                  //
+// + setIdade(i: int): void                                           //
 ////////////////////////////////////////////////////////////////////////
 
 //string ou char[], qual a diferença?
@@ -51,6 +51,10 @@ class Pessoa {
       setSexo(s);
     }
 
+    ~Pessoa() {
+      cout << "Objeto destruído\n" << endl;
+    }
+
     //metodos getters
     string getNome() { return nome; }
     string getEmail() { return email; }
@@ -71,14 +75,26 @@ class Pessoa {
            << "Email: " << getEmail() << endl
            << "Telefone: " << getFone() << endl
            << "Sexo: " << getSexo() << endl
-           << "Idade: " << getIdade() << " anos" << endl;
+           << "Idade: " << getIdade() << " anos\n" << endl;
     }
 };
 
 int main(){
-  Pessoa p1("Pedro", "pedrojose@gmail.com", 24999785822, 'm', 38);
-  
-  p1.mostra();
+  {
+    Pessoa p1("Pedro", "pedrojose@gmail.com", 24999785822, 'm', 38);
+    p1.mostra();
+  }
 
+  {
+    Pessoa p2("Joao", "joaomarcos@gmail.com", 24994520815, 'm', 30);
+    p2.mostra();
+  }
+
+  {
+    Pessoa p3("Joaquim", "joaquingomes@gmail.com", 24999854125, 'm', 15);
+    p3.mostra();
+  }
+
+  return 0;
 }
 
