@@ -6,15 +6,19 @@ using namespace std;
 
 class Produto {
   private:
-    string nome, tipo, marca;
+    int cod;
+    string nome;
+    float preco;
   
   public:
-    Produto(string, string, string);
+    Produto(int, string, float);
+    ~Produto();
+    int getCod();
     string getNome();
-    string getTipo();
-    string getMarca();
+    float getPreco();
+    void setCod(int);
     void setNome(string);
-    void setTipo(string);
-    void setMarca(string);
+    void setPreco(float);
     void mostra();
+    float calcPrecoFinal();
 };
